@@ -503,9 +503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79eb2d0f3e02dbe40936baba69afdd32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scratch.FirstPerson.PlayerMovement
-  controller: {fileID: 442100941}
-  jump: {fileID: 442100945}
-  moveSpeed: 5
+  _controller: {fileID: 442100941}
+  _jump: {fileID: 442100945}
+  _moveSpeed: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
