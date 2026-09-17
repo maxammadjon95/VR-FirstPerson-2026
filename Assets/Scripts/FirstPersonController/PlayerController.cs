@@ -9,6 +9,8 @@ namespace Scratch.FirstPerson
         [SerializeField] PlayerJump _jump;
         [SerializeField] PlayerLook _look;
 
+        public bool RunKeyPressed { get; private set; }
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -27,6 +29,8 @@ namespace Scratch.FirstPerson
             if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) moveInput.x += 1f;
             if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) moveInput.x -= 1f;
             moveInput.Normalize();
+
+            RunKeyPressed = keyboard.shiftKey.isPressed;
 
             Vector2 lookInput = mouse.delta.ReadValue();
 
