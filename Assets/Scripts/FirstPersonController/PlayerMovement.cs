@@ -6,12 +6,16 @@ namespace Scratch.FirstPerson
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] CharacterController _controller;
+        [SerializeField] PlayerController _player;
         [SerializeField] PlayerJump _jump;
         [SerializeField] float _moveSpeed = 5f;
+        [SerializeField] float _runSpeed;
+        [SerializeField] float _slowSpeed;
 
         public void Move(Vector2 input, float deltaTime)
         {
-            Vector3 horizontal = (transform.right * input.x + transform.forward * input.y) * _moveSpeed;
+            float speed = _player.RunKeyPressed ? _runSpeed : _moveSpeed;
+            Vector3 horizontal = (transform.right * input.x + transform.forward * input.y) * speed;
             Vector3 velocity = horizontal + Vector3.up * _jump.VerticalVelocity;
             _controller.Move(velocity * deltaTime);
         }
