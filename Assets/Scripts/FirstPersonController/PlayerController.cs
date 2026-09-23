@@ -1,3 +1,4 @@
+using Assets.Scripts.FirstPersonController;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ namespace Scratch.FirstPerson
         [SerializeField] PlayerMovement _movement;
         [SerializeField] PlayerJump _jump;
         [SerializeField] PlayerLook _look;
+        [SerializeField] DoorOpener _doorOpener;
 
         public bool RunKeyPressed { get; private set; }
 
@@ -39,6 +41,8 @@ namespace Scratch.FirstPerson
 
             _movement.Move(moveInput, Time.deltaTime);
             _look.Look(lookInput, Time.deltaTime);
+
+            if (keyboard.fKey.wasPressedThisFrame) _doorOpener.OpenOrCloseDoor();
         }
     }
 }

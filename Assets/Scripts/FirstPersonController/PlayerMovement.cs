@@ -9,8 +9,7 @@ namespace Scratch.FirstPerson
         [SerializeField] PlayerController _player;
         [SerializeField] PlayerJump _jump;
         [SerializeField] float _moveSpeed = 5f;
-        [SerializeField] float _runSpeed;
-        [SerializeField] float _slowSpeed;
+        [SerializeField] float _runSpeed = 25f;
 
         public void Move(Vector2 input, float deltaTime)
         {
